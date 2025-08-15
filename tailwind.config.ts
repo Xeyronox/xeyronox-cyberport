@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,15 +53,28 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
+				// Cyberpunk Color System
+				cyber: {
+					black: 'hsl(var(--cyber-black))',
+					dark: 'hsl(var(--cyber-dark))',
+					darker: 'hsl(var(--cyber-darker))',
+					rust: {
+						DEFAULT: 'hsl(var(--cyber-rust))',
+						bright: 'hsl(var(--cyber-rust-bright))'
+					},
+					green: {
+						DEFAULT: 'hsl(var(--cyber-green))',
+						bright: 'hsl(var(--cyber-green-bright))'
+					},
+					blue: {
+						DEFAULT: 'hsl(var(--cyber-blue))',
+						bright: 'hsl(var(--cyber-blue-bright))'
+					},
+					white: 'hsl(var(--cyber-white))',
+					gray: {
+						DEFAULT: 'hsl(var(--cyber-gray))',
+						dark: 'hsl(var(--cyber-gray-dark))'
+					}
 				}
 			},
 			borderRadius: {
@@ -68,27 +82,39 @@ export default {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
-			keyframes: {
-				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
-				},
-				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
-				}
+			fontFamily: {
+				mono: ['JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', 'monospace'],
+				sans: ['Inter', 'system-ui', 'sans-serif'],
+				display: ['Orbitron', 'sans-serif']
 			},
 			animation: {
-				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'blink': 'blink 1s infinite',
+				'glitch-1': 'glitch-1 0.5s infinite',
+				'glitch-2': 'glitch-2 0.5s infinite',
+				'scanlines': 'scanlines 0.1s linear infinite',
+				'typing': 'typing 3s steps(40, end)',
+				'matrix-rain': 'matrix-rain 3s linear infinite',
+				'fade-in': 'fadeIn 0.5s ease-in-out',
+				'slide-up': 'slideUp 0.6s ease-out',
+				'pulse-neon': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+			},
+			keyframes: {
+				fadeIn: {
+					'0%': { opacity: '0', transform: 'translateY(20px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				slideUp: {
+					'0%': { opacity: '0', transform: 'translateY(50px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				}
+			},
+			boxShadow: {
+				'neon-red': '0 0 20px hsl(var(--cyber-rust) / 0.5)',
+				'neon-green': '0 0 20px hsl(var(--cyber-green) / 0.5)',
+				'neon-blue': '0 0 20px hsl(var(--cyber-blue) / 0.5)',
+				'glow-red': '0 0 40px hsl(var(--cyber-rust) / 0.6)',
+				'glow-green': '0 0 40px hsl(var(--cyber-green) / 0.6)',
+				'glow-blue': '0 0 40px hsl(var(--cyber-blue) / 0.6)'
 			}
 		}
 	},
